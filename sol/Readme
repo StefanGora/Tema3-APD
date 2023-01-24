@@ -1,0 +1,25 @@
+Pentru realizarea acestei teme am abordat separat situatia cand exista sau nu exista o legatura intre procesul 0 si 1;
+
+Pe prima ramura a if-ului ce verifica codul de orare se verifica daca tema in mod normal iar pe ramura de else se verifica implementarea bonusului;
+
+Task 1
+-> Pentru fiecare proces lider am citit din fiserele de input aferente si salvat nr de workweri si workerii pe care ii detine fiecare lider.
+-> Am trimis mai departe informatile catre fiecare coordonataor iar dupa ce fiecare a aflat iformatii de care avea nevoie le-a transmins mai departe la copii sai
+-> Fiecare copil isi primeste liderul precum si iformatile despre topologie
+-> La fiecare mesaj de comunicare intre procese afisez procesul sursa si destinatarul
+ 
+-> Pentru afisarea topologiei am folosit o functie care primeste rangul 
+procesului, dimensiunile vectorilor cu copiii fiecarui lider, precum si vectorii de copii ai fiecarui lider 
+
+Task 2
+-> Daca procesul are rang 0 se creeaza vectorul task2Buffer
+-> Pt fiecare proces lider setez nr de task-uri pe care urmeaza sa le imparta la copii liderii urmeaza sa-i imparta la copiii lor'
+-> Formulaa dupa care calculez nr de taskuri este:
+Parte Intreaga( Dimenesiunea Vectorului din Iput / Nr Total copii din topologie) * Numarul de Copii al procesului lidere
+-> Formula se aplica pentru procesele 0 si 1 iar procesului 2 ii revin restul de task-uri ramase 
+-> Fiecare proces copil prelucreaza atatea elemente din vector cat ii este atribuit din nr de task-uri retinut de lider
+->In procesele copii se contruiesc mici vectori pe care i-am denumit "solutii partiale" care dupa sunt trimisi catre lideri
+-> Rezultatele se retin de lideri in niste buffere care dupa sunt asamblate in vectorul final si afisat in procesul 0
+
+Bonus
+Pentru implementarea bonusului implementarea a decurs asemanataor dar orice prelucrare efectuata pe calea 0 - 1 se transmti prin intermediul procesului 2
